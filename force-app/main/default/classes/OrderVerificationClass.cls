@@ -16,6 +16,7 @@ public with sharing class OrderVerificationClass {
                         WHERE OrderId = :orderId
                 ];
                  if(items.size() == 0 && order.Status == 'Activated') {
+                     order.Status = 'Draft';
                      order.addError('Please add product to the order before changing status');
                  }
             }
