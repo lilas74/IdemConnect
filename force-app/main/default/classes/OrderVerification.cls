@@ -3,7 +3,7 @@
  * @description Class to verify some data on the Order Object
  */
 
-public with sharing class OrderVerificationClass {
+public with sharing class OrderVerification {
 
 
     public static void OrderActivationPrevention(List<Order> orders) {
