@@ -31,7 +31,7 @@ private class ReminderBatchTest {
 	@IsTest
 	static void ReminderForAccountInactivityBatchTest() {
 		Test.startTest();
-		ReminderForAccountInactivityBatch reminder = new ReminderForAccountInactivityBatch();
+		AccountInactivityReminderBatch reminder = new AccountInactivityReminderBatch();
 		Id batchId = Database.executeBatch(reminder, 100);
 		Test.stopTest();
 		List <Task> myTasksReminder = [
@@ -65,7 +65,7 @@ private class ReminderBatchTest {
 
 
 		Test.startTest();
-		ReminderForAccountInactivityBatch reminder = new ReminderForAccountInactivityBatch();
+		AccountInactivityReminderBatch reminder = new AccountInactivityReminderBatch();
 		Id batchId = Database.executeBatch(reminder, 100);
 		Test.stopTest();
 		List <Task> myTasksReminder = [

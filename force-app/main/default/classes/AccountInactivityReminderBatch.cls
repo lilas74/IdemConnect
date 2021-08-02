@@ -2,7 +2,7 @@
  * Created by lilas on 01/08/2021.
  */
 
-global class ReminderForAccountInactivityBatch implements Database.Batchable<sObject>, Database.Stateful {
+global class AccountInactivityReminderBatch implements Database.Batchable<sObject>, Database.Stateful {
 	public Integer recordsProcessed = 0;
 	/**
 	 * @description Creating a batch class apex that is triggered on
@@ -39,9 +39,11 @@ global class ReminderForAccountInactivityBatch implements Database.Batchable<sOb
 				createTasks.ReminderDateTime = System.now() + 5;
 
 				tasksToUpdate.add(createTasks);
-			}
+				recordsProcessed = recordsProcessed + 1;
 
-			recordsProcessed = recordsProcessed + 1;
+			}
+			//recordsProcessed = recordsProcessed + 1;
+
 		}
 		insert tasksToUpdate;
 		update scope;

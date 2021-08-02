@@ -4,7 +4,7 @@
 
 global class ScheduleBatchReminderTasks implements Schedulable{
 	global void execute(SchedulableContext ctx) {
-		ReminderForAccountInactivityBatch reminder = new ReminderForAccountInactivityBatch();
+		AccountInactivityReminderBatch reminder = new AccountInactivityReminderBatch();
 		Id batchId = Database.executeBatch(reminder,100);
 
 	}
